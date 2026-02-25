@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import profilePic from '../assets/img/profile-img.jpg'
 const skillGroups = [
   {
     title: 'Programming Languages',
@@ -147,7 +147,7 @@ const Header = () => {
     <header id="header">
       <div className="d-flex flex-column">
         <div className="profile">
-          <img src="assets/img/profile-img.jpg" alt="Profile" className="img-fluid rounded-circle" />
+          <img src={profilePic} alt="Profile" className="img-fluid rounded-circle" />
           <h1 className="text-light">
             <a href="#hero">Shivendra Kumar Sonkar</a>
           </h1>
@@ -260,7 +260,7 @@ useEffect(()=>{
 
         <div className="row">
           <div className="col-lg-4">
-            <img src="assets/img/profile-img.jpg" className="img-fluid" alt="Profile" />
+            <img src={profilePic} className="img-fluid" alt="Profile" />
           </div>
           <div className="col-lg-8 pt-4 pt-lg-0 content">
             <h3>Fullstack Software Developer</h3>
