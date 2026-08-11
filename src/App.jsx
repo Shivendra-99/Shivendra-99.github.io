@@ -66,16 +66,28 @@ const projects = [
 const experience = [
   {
     role: 'Software Engineer (FSE)',
-    company: 'Cognizant Technology Solutions',
-    period: '09/2021 – Present',
+    company: 'Accenture Solutions Pvt. Ltd.',
+    period: '29-May-2026 – Present',
     location: 'India',
-    points: [
-      'Worked across frontend and backend to introduce new features and enhancements.',
-      'Migrated backend applications from PCF to OpenShift and frontend workloads to AWS.',
-      'Used Splunk for log analysis and configured alerting for backend services.',
-      'Focused on building new capabilities and resolving production issues in a timely manner.',
+     points: [
+      'Implemented efficient pagination and optimized query performance, reducing API response time from 10 seconds to 2.5 seconds.',
+      'Provisioned and managed Snowflake database tables using Terraform to support infrastructure-as-code practices.',
+      'Built and maintained Pulsar topics and listeners to support reliable messaging workflows.'
     ],
   },
+  {
+    role: 'Software Engineer (FSE)',
+    company: 'Cognizant Technology Solutions',
+    period: '09/2021 – 28-May-2026',
+    location: 'India',
+    points: [
+      'Implemented secure SFTP integration to transfer files from Java application to MFS system, ensuring reliable and automated data exchange.',
+      'Configured and implemented monitoring using Dynatrace, including creation of custom dashboards and alert setup for proactive issue detection and performance monitoring in production.',
+      'Led migration of backend applications from PCF to OpenShift and frontend workloads to AWS, improving scalability and deployment efficiency.',
+      'Contributed across frontend and backend to design and deliver new features and enhancements, while ensuring production stability and timely issue resolution.',
+      'Utilized Splunk for log analysis and implemented alerting mechanisms to proactively monitor backend services and reduce incident resolution time.'
+    ],
+  }
 ];
 
 const articles = [
@@ -93,6 +105,11 @@ const articles = [
     title: 'How to Connect MongoDB with Spring Boot?',
     link: "https://www.geeksforgeeks.org/how-to-connect-mongodb-with-spring-boot/",
     description: 'Article that explains step‑by‑step how to integrate MongoDB with a Spring Boot backend, covering configuration, repositories, and common pitfalls.',
+  },
+   {
+    title: 'How I Built an Async Email Notification System Using Express.js, SQS, and AWS Lambda',
+    link: "https://medium.com/@sanusonkar1/how-i-built-an-async-email-notification-system-using-express-js-sqs-and-aws-lambda-be09adbafd22",
+    description: 'A practical walkthrough of building an asynchronous email notification system using Express.js, SQS, and AWS Lambda for reliable background processing.',
   },
 ];
 
@@ -123,9 +140,7 @@ const achievements = [
   'Achieved 1350th position in India in the Interview Jump Start coding contest.',
   'Secured 2nd place in the Tech Buzz coding contest.',
   'HackerRank: Gold Badge in Problem Solving.',
-  'LeetCode: 3‑star coder.',
-  'Published article: "How to Connect MongoDB with Spring Boot?".',
-  'Implemented Text‑to‑PDF conversion using AWS Lambda and S3.',
+  'LeetCode: 3‑star coder.'
 ];
 
 
