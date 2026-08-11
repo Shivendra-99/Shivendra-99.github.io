@@ -595,8 +595,8 @@ const App = () => {
       <main id="main">
         <About />
         <ResumeSection />
-        <Skills />
         <ArticlesSection />
+        <Skills />
         <ProjectsSection />
         <AchievementsSection />
         <ContactSection />
