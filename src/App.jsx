@@ -119,19 +119,7 @@ const education = [
     school: 'Ambalika Institute of Management and Technology, Lucknow',
     period: '2017 – 2021',
     result: 'Marks: 74.23%',
-  },
-  {
-    degree: 'Intermediate',
-    school: 'S.V.M Inter College, Unchahar Raebareli',
-    period: '2016',
-    result: 'Marks: 66%',
-  },
-  {
-    degree: 'High School',
-    school: 'S.V.M Inter College, Unchahar Raebareli',
-    period: '2014',
-    result: 'Marks: 77.8%',
-  },
+  }
 ];
 
 const achievements = [
@@ -363,8 +351,8 @@ const ResumeSection = () => {
           <p>Professional experience and academic background aligned with full‑stack and cloud‑native development.</p>
         </div>
 
-        <div className="row">
-          <div className="col-lg-6">
+        <div className="row ms-2">
+          {/* <div className="col-lg-6"> */}
             <h3 className="resume-title">Professional Experience</h3>
             {experience.map((item) => (
               <div className="resume-item" key={item.company}>
@@ -382,9 +370,9 @@ const ResumeSection = () => {
                 </ul>
               </div>
             ))}
-          </div>
+          {/* </div> */}
 
-          <div className="col-lg-6">
+          {/* <div className="col-lg-6"> */}
             <h3 className="resume-title">Education</h3>
             {education.map((item) => (
               <div className="resume-item" key={item.degree + item.period}>
@@ -396,7 +384,7 @@ const ResumeSection = () => {
                 {item.result && <p>{item.result}</p>}
               </div>
             ))}
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </section>
