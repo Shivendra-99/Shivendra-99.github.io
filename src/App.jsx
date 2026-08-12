@@ -25,8 +25,25 @@ const skillGroups = [
 
 const projects = [
   {
+    title: 'SnapFit',
+    period: 'Personal Project',
+    tech: 'React.js, JavaScript, HTML, CSS',
+    link: 'https://www.snapfit.in',
+    github: 'https://github.com/Shivendra-99/snapFit',
+    points: [
+      'Built a browser-based React app for exam-ready photo editing and PDF compression, designed for Indian competitive exams such as NEET, JEE, UPSC, SSC, IBPS, RRB, GATE, NDA, and more.',
+      'Implemented exam photo resizing for 20+ presets with auto crop and face framing for passport and exam photo requirements.',
+      'Added background replacement options including white, off-white, light blue, and blue for polished output.',
+      'Enabled JPEG preview and file size estimation so users can validate final output before download.',
+      'Supported custom presets for any width, height, and KB range to match specific application needs.',
+      'Developed a fully client-side workflow with no uploads or server-side storage, ensuring privacy and fast processing.',
+      'Included a standalone PDF compressor with before/after preview and adjustable quality settings for local file-size reduction.',
+    ],
+  },
+  {
     title: 'Tweet App',
     period: 'Personal Project',
+    link: 'https://tweet-app.example.com',
     tech: 'Java, Spring Boot, MongoDB, React.js, Docker, AWS (Amplify, Elastic Beanstalk)',
     github: '',
     points: [
@@ -40,6 +57,7 @@ const projects = [
   {
     title: 'News App',
     period: 'Personal Project',
+    link: 'https://news-app.example.com',
     tech: 'React.js, News API, Bootstrap, React Router',
     github: '',
     points: [
@@ -435,11 +453,15 @@ const ProjectsSection = () => {
                 <p className="project-tech">
                   <strong>Tech stack:</strong> {project.tech}
                 </p>
-                <ul className="project-points">
-                  {project.points.map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
+                <a
+                      href={project.link}
+                      className="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-2"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="bi bi-link" />
+                      <span>View Application</span>
+                    </a>
                 {project.github && (
                   <div className="project-links mt-2">
                     <a
@@ -453,6 +475,11 @@ const ProjectsSection = () => {
                     </a>
                   </div>
                 )}
+                <ul className="project-points">
+                  {project.points.map((p) => (
+                    <li key={p}>{p}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
