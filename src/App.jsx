@@ -497,36 +497,29 @@ const ContactSection = () => {
           <p>Feel free to reach out for opportunities, collaborations, or any queries.</p>
         </div>
 
-        <div className="row">
-          <div className="col-lg-5 d-flex align-items-stretch">
-            <div className="info">
-              <div className="address">
-                <i className="bi bi-geo-alt" />
-                <h4>Location:</h4>
-                <p>Ali Ganj Churaha, Garhi Manikpur, Kunda, Pratapgarh, Uttar Pradesh, India</p>
+        <div className="row align-items-center">
+          <div className="col-lg-12">
+            <div className="info d-flex flex-column gap-3">
+              <div className="address d-flex align-items-center gap-3 mb-0">
+                <div className="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style={{ width: '52px', height: '52px' }}>
+                  <i className="bi bi-geo-alt" />
+                </div>
+                <span>Ali Ganj Churaha, Garhi Manikpur, Kunda, Pratapgarh, Uttar Pradesh, India</span>
               </div>
 
-              <div className="email">
-                <i className="bi bi-envelope" />
-                <h4>Email:</h4>
-                <p>sanusonkar1@gmail.com</p>
+              <div className="email d-flex align-items-center gap-3 mb-0">
+                <div className="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style={{ width: '52px', height: '52px' }}>
+                  <i className="bi bi-envelope" />
+                </div>
+                <a href="mailto:sanusonkar1@gmail.com">sanusonkar1@gmail.com</a>
               </div>
 
-              <div className="phone">
-                <i className="bi bi-phone" />
-                <h4>Call:</h4>
-                <p>+91 99361 20982</p>
+              <div className="phone d-flex align-items-center gap-3 mb-0">
+                <div className="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style={{ width: '52px', height: '52px' }}>
+                  <i className="bi bi-phone" />
+                </div>
+                <a href="tel:+919936120982">+91 99361 20982</a>
               </div>
-            </div>
-          </div>
-
-          <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <div className="info">
-              <h4>Let&apos;s connect</h4>
-              <p>
-                The contact form from the original template has been simplified. You can reach me directly via email or
-                phone for any professional discussion.
-              </p>
             </div>
           </div>
         </div>
