@@ -166,7 +166,7 @@ const Header = () => {
             <a href="https://twitter.com/Shivendra9598" className="twitter" target="_blank" rel="noreferrer">
               <i className="bx bxl-twitter" />
             </a>
-            <a href="mailto:sanusonkar1@gmail.com" className="twitter" target="_blank" rel="noreferrer">
+            <a href="mailto:shivendrasonkar001@gmail.com" className="twitter" target="_blank" rel="noreferrer">
              <i className="bx bx-envelope"/>
             </a>
           </div>
@@ -271,26 +271,26 @@ useEffect(()=>{
               Passionate about backend services, cloud‑native architectures, and modern frontend development.
             </p>
             <div className="row">
-              <div className="col-lg-6">
+              <div className="col-lg-10">
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right" /> <strong>Phone:</strong>{' '}
-                    <span>+91&nbsp;99361&nbsp;20982</span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right" /> <strong>City:</strong>{' '}
-                    <span>Pratapgarh, Uttar Pradesh, India</span>
+                    <a href="tel:+919936120982" target="_blank" rel="noreferrer">
+                      +91 99361 20982
+                    </a>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right" /> <strong>Current Role:</strong> <span>Fullstack Software Engineer</span>
                   </li>
                 </ul>
               </div>
-              <div className="col-lg-6">
+              <div className="col-lg-8">
                 <ul>
                   <li>
-                    <i className="bi bi-chevron-right" /> <strong>Email:</strong>{' '}
-                    <span>sanusonkar1@gmail.com</span>
+                    <i className="bi bi-chevron-right" /> <strong>Email:</strong>
+                    <a href="mailto:shivendrasonkar001@gmail.com" target="_blank" rel="noreferrer">
+                      shivendrasonkar001@gmail.com
+                    </a>
                   </li>
                   <li>
                     <i className="bi bi-chevron-right" /> <strong>Experience:</strong>{' '}
@@ -500,18 +500,11 @@ const ContactSection = () => {
         <div className="row align-items-center">
           <div className="col-lg-12">
             <div className="info d-flex flex-column gap-3">
-              <div className="address d-flex align-items-center gap-3 mb-0">
-                <div className="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style={{ width: '52px', height: '52px' }}>
-                  <i className="bi bi-geo-alt" />
-                </div>
-                <span>Ali Ganj Churaha, Garhi Manikpur, Kunda, Pratapgarh, Uttar Pradesh, India</span>
-              </div>
-
               <div className="email d-flex align-items-center gap-3 mb-0">
                 <div className="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style={{ width: '52px', height: '52px' }}>
                   <i className="bi bi-envelope" />
                 </div>
-                <a href="mailto:sanusonkar1@gmail.com">sanusonkar1@gmail.com</a>
+                <a href="mailto:shivendrasonkar001@gmail.com">shivendrasonkar001@gmail.com</a>
               </div>
 
               <div className="phone d-flex align-items-center gap-3 mb-0">
