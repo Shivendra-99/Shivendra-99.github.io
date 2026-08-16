@@ -173,7 +173,7 @@ const Hero = () => {
           <p className="hero-role">Fullstack Software Engineer</p>
           <p className="hero-summary">
             I design and build scalable backend services and clean, production‑ready interfaces with Java,
-            Spring Boot, React.js and AWS — turning ideas into reliable software.
+            Spring Boot, React.js and AWS turning ideas into reliable software.
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn-solid">
