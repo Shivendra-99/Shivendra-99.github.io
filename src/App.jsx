@@ -52,6 +52,20 @@ const projects = [
     ],
   },
   {
+    title: 'News App',
+    period: 'Personal Project',
+    link: 'https://newsapp-lac-ten.vercel.app/',
+    tech: 'React 18, Vite, Tailwind CSS v4, React Router, Currents API, Phosphor Icons',
+    github: 'https://github.com/Shivendra-99/newsapp',
+    points: [
+      'Built a responsive news app with category browsing for Business, Entertainment, General, Health, Science, Sports, and Technology.',
+      'Fetched live headlines and featured content per category and country using the Currents API.',
+      'Implemented a featured hero story and a “Latest News” grid for a cleaner reading experience.',
+      'Added a light/dark mode that follows the system preference by default and remembers the user’s manual toggle across visits.',
+      'Included mobile navigation, loading skeletons, and an empty-state fallback for categories with no available results.',
+    ],
+  },
+  {
     title: 'Tweet App',
     period: 'Personal Project',
     link: 'https://tweet-app.example.com',
@@ -63,19 +77,6 @@ const projects = [
       'Used Grafana for server monitoring and alerting on key application metrics.',
       'Integrated a rich text editor (Jodit) to compose and format tweets before publishing.',
       'Implemented utilities such as Text‑to‑PDF conversion using AWS Lambda and S3.',
-    ],
-  },
-  {
-    title: 'News App',
-    period: 'Personal Project',
-    link: 'https://news-app.example.com',
-    tech: 'React.js, News API, Bootstrap, React Router',
-    github: '',
-    points: [
-      'Built a single‑page news application that displays the latest headlines from multiple categories.',
-      'Integrated News API to fetch real‑time news articles.',
-      'Implemented routing for smooth navigation between different news categories.',
-      'Used card layouts and a carousel for a visually engaging reading experience.',
     ],
   },
   {
