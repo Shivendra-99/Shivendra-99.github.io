@@ -1,5 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import profilePic from '../assets/img/profile-img.jpg'
+
+const navItems = [
+  { id: 'hero', label: 'Home', icon: 'bi bi-house' },
+  { id: 'about', label: 'About', icon: 'bi bi-person' },
+  { id: 'resume', label: 'Experience', icon: 'bi bi-file-earmark-text' },
+  { id: 'articles', label: 'Articles', icon: 'bi bi-journal-text' },
+  { id: 'skills', label: 'Skills', icon: 'bi bi-bar-chart' },
+  { id: 'projects', label: 'Projects', icon: 'bi bi-code-slash' },
+  { id: 'achievements', label: 'Achievements', icon: 'bi bi-trophy' },
+  { id: 'contact', label: 'Contact', icon: 'bi bi-envelope' },
+];
 const skillGroups = [
   {
     title: 'Programming Languages',
@@ -152,83 +163,102 @@ const achievements = [
 
 const Hero = () => {
   return (
-    <section id="hero" className="d-flex flex-column justify-content align-items-center">
-      <div className="hero-container">
-        <h1>Shivendra Kumar Sonkar</h1>
-        <p>
-          <span>Fullstack Software Engineer</span>
-        </p>
-      </div>
-    </section>
-  );
-};
-
-const Header = () => {
-  return (
-    <header id="header">
-      <div className="d-flex flex-column">
-        <div className="profile">
-          <img src={profilePic} alt="Profile" className="img-fluid rounded-circle" />
-          <h1 className="text-light">
-            <a href="#hero">Shivendra Kumar Sonkar</a>
-          </h1>
-          <div className="social-links mt-3 text-center">
+    <section id="hero" className="hero">
+      <div className="hero-bg" aria-hidden="true" />
+      <div className="container hero-container">
+        <div className="hero-text">
+          <p className="hero-eyebrow">Hello, I&apos;m</p>
+          <h1>Shivendra Kumar Sonkar</h1>
+          <p className="hero-role">Fullstack Software Engineer</p>
+          <p className="hero-summary">
+            I design and build scalable backend services and clean, production‑ready interfaces with Java,
+            Spring Boot, React.js and AWS — turning ideas into reliable software.
+          </p>
+          <div className="hero-actions">
+            <a href="#projects" className="btn-solid">
+              View Projects
+            </a>
+            <a href="#contact" className="btn-outline-nav">
+              Get in Touch
+            </a>
+          </div>
+          <div className="social-links hero-socials">
             <a
               href="https://www.linkedin.com/in/shivendra-kumar-sonkar-4349ab17b"
-              className="linkedin"
+              aria-label="LinkedIn profile"
               target="_blank"
               rel="noreferrer"
             >
               <i className="bx bxl-linkedin" />
             </a>
-            <a href="https://twitter.com/Shivendra9598" className="twitter" target="_blank" rel="noreferrer">
+            <a href="https://twitter.com/Shivendra9598" aria-label="Twitter profile" target="_blank" rel="noreferrer">
               <i className="bx bxl-twitter" />
             </a>
-            <a href="mailto:shivendrasonkar001@gmail.com" className="twitter" target="_blank" rel="noreferrer">
-             <i className="bx bx-envelope"/>
+            <a href="mailto:shivendrasonkar001@gmail.com" aria-label="Send email">
+              <i className="bx bx-envelope" />
             </a>
           </div>
         </div>
 
-        <nav id="navbar" className="nav-menu navbar">
+        <div className="hero-media">
+          <div className="hero-photo-ring">
+            <img src={profilePic} alt="Shivendra Kumar Sonkar" className="hero-photo" />
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" className="scroll-cue" aria-label="Scroll to About section">
+        <i className="bi bi-chevron-down" />
+      </a>
+    </section>
+  );
+};
+
+const Header = ({ darkMode, onToggleDarkMode, activeSection, scrolled, mobileMenuOpen, onToggleMobileMenu, onNavLinkClick }) => {
+  return (
+    <header id="header" className={scrolled ? 'scrolled' : ''}>
+      <div className="container header-inner">
+        <a href="#hero" className="brand" onClick={onNavLinkClick}>
+          Shivendra<span>.</span>
+        </a>
+
+        <nav id="navbar" className={`nav-menu ${mobileMenuOpen ? 'nav-menu-open' : ''}`}>
           <ul>
-            <li>
-              <a href="#hero" className="nav-link scrollto active">
-                <i className="bx bx-home" /> <span>Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="#about" className="nav-link scrollto">
-                <i className="bx bx-user" /> <span>About</span>
-              </a>
-            </li>
-            <li>
-              <a href="#skills" className="nav-link scrollto">
-                <i className="bx bx-bar-chart-alt-2" /> <span>Skills</span>
-              </a>
-            </li>
-            <li>
-              <a href="#resume" className="nav-link scrollto">
-                <i className="bx bx-file-blank" /> <span>Experience &amp; Education</span>
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="nav-link scrollto">
-                <i className="bx bx-code-alt" /> <span>Projects</span>
-              </a>
-            </li>
-            <li>
-              <a href="#achievements" className="nav-link scrollto">
-                <i className="bx bx-trophy" /> <span>Achievements</span>
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="nav-link scrollto">
-                <i className="bx bx-envelope" /> <span>Contact</span>
-              </a>
-            </li>
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  onClick={onNavLinkClick}
+                >
+                  <i className={item.icon} /> <span>{item.label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
+
+        <div className="header-actions">
+          <button
+            type="button"
+            className="theme-toggle-btn"
+            onClick={onToggleDarkMode}
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            <i className={darkMode ? 'bi bi-sun-fill' : 'bi bi-moon-fill'} />
+          </button>
+          <button
+            type="button"
+            className="mobile-nav-toggle"
+            onClick={onToggleMobileMenu}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="navbar"
+          >
+            <i className={mobileMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'} />
+          </button>
+        </div>
       </div>
     </header>
   );
@@ -272,24 +302,21 @@ useEffect(()=>{
       <div className="container">
         <div className="section-title">
           <h2>About</h2>
-          <p>
-            I am a Fullstack Software Engineer with experience delivering end‑to‑end solutions across Java, Spring Boot, React.js, express.js
-            and cloud platforms such as AWS and OpenShift. I enjoy building scalable backend services, clean user
-            interfaces, and automating deployments to create reliable, production‑ready systems.
-          </p>
         </div>
 
-        <div className="row">
-          <div className="col-lg-4">
-            <img src={profilePic} className="img-fluid" alt="Profile" />
-          </div>
-          <div className="col-lg-8 pt-4 pt-lg-0 content">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-7 content order-2 order-lg-1">
+            <p>
+              I am a Fullstack Software Engineer with experience delivering end‑to‑end solutions across Java, Spring Boot, React.js, express.js
+              and cloud platforms such as AWS and OpenShift. I enjoy building scalable backend services, clean user
+              interfaces, and automating deployments to create reliable, production‑ready systems.
+            </p>
             <h3>Fullstack Software Developer</h3>
             <p className="fst-italic">
               Passionate about backend services, cloud‑native architectures, and modern frontend development.
             </p>
             <div className="row">
-              <div className="col-lg-10">
+              <div className="col-sm-6">
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right" /> <strong>Phone:</strong>{' '}
@@ -302,7 +329,7 @@ useEffect(()=>{
                   </li>
                 </ul>
               </div>
-              <div className="col-lg-8">
+              <div className="col-sm-6">
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right" /> <strong>Email:</strong>
@@ -320,6 +347,9 @@ useEffect(()=>{
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="col-lg-5 order-1 order-lg-2">
+            <img src={profilePic} className="img-fluid about-photo" alt="Shivendra Kumar Sonkar" />
           </div>
         </div>
       </div>
@@ -369,8 +399,8 @@ const ResumeSection = () => {
           <p>Professional experience and academic background aligned with full‑stack and cloud‑native development.</p>
         </div>
 
-        <div className="row ms-2">
-          {/* <div className="col-lg-6"> */}
+        <div className="timeline">
+          <div className="timeline-group">
             <h3 className="resume-title">Professional Experience</h3>
             {experience.map((item) => (
               <div className="resume-item" key={item.company}>
@@ -388,9 +418,9 @@ const ResumeSection = () => {
                 </ul>
               </div>
             ))}
-          {/* </div> */}
+          </div>
 
-          {/* <div className="col-lg-6"> */}
+          <div className="timeline-group">
             <h3 className="resume-title">Education</h3>
             {education.map((item) => (
               <div className="resume-item" key={item.degree + item.period}>
@@ -402,7 +432,7 @@ const ResumeSection = () => {
                 {item.result && <p>{item.result}</p>}
               </div>
             ))}
-          {/* </div> */}
+          </div>
         </div>
       </div>
     </section>
@@ -446,35 +476,41 @@ const ProjectsSection = () => {
 
         <div className="row g-4">
           {projects.map((project) => (
-            <div className="col-lg-4 col-md-6 portfolio-item" key={project.title}>
-              <div className="project-card">
+            <div className="col-12 portfolio-item" key={project.title}>
+              <div className="project-card project-card-row">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-period">{project.period}</p>
-                <p className="project-tech">
-                  <strong>Tech stack:</strong> {project.tech}
-                </p>
-                <a
+                <div className="project-tech-badges">
+                  {project.tech.split(',').map((t) => (
+                    <span className="tech-badge" key={t}>
+                      {t.trim()}
+                    </span>
+                  ))}
+                </div>
+                <div className="project-links d-flex flex-wrap gap-2">
+                  {project.link && (
+                    <a
                       href={project.link}
-                      className="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-2"
+                      className="btn-chip"
                       target="_blank"
                       rel="noreferrer"
                     >
                       <i className="bi bi-link" />
                       <span>View Application</span>
                     </a>
-                {project.github && (
-                  <div className="project-links mt-2">
+                  )}
+                  {project.github && (
                     <a
                       href={project.github}
-                      className="btn btn-sm btn-outline-primary d-inline-flex align-items-center gap-2"
+                      className="btn-chip"
                       target="_blank"
                       rel="noreferrer"
                     >
                       <i className="bi bi-github" />
                       <span>View on GitHub</span>
                     </a>
-                  </div>
-                )}
+                  )}
+                </div>
                 <ul className="project-points">
                   {project.points.map((p) => (
                     <li key={p}>{p}</li>
@@ -524,18 +560,20 @@ const ContactSection = () => {
           <p>Feel free to reach out for opportunities, collaborations, or any queries.</p>
         </div>
 
-        <div className="row align-items-center">
-          <div className="col-lg-12">
-            <div className="info d-flex flex-column gap-3">
+        <div className="row justify-content-center">
+          <div className="col-lg-8">
+            <div className="info contact-card">
               <div className="email d-flex align-items-center gap-3 mb-0">
-                <div className="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style={{ width: '52px', height: '52px' }}>
+                <div className="contact-icon rounded-circle text-white d-flex align-items-center justify-content-center">
                   <i className="bi bi-envelope" />
                 </div>
                 <a href="mailto:shivendrasonkar001@gmail.com">shivendrasonkar001@gmail.com</a>
               </div>
 
+              <div className="contact-divider" />
+
               <div className="phone d-flex align-items-center gap-3 mb-0">
-                <div className="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style={{ width: '52px', height: '52px' }}>
+                <div className="contact-icon rounded-circle text-white d-flex align-items-center justify-content-center">
                   <i className="bi bi-phone" />
                 </div>
                 <a href="tel:+919936120982">+91 99361 20982</a>
@@ -548,30 +586,29 @@ const ContactSection = () => {
   );
 };
 
-const Footer = ({ darkMode, onToggleDarkMode }) => {
+const Footer = () => {
   return (
     <footer id="footer">
       <div className="container">
-        <button
-          type="button"
-          className="btn btn-sm btn-outline-light w-100 d-flex align-items-center justify-content-center gap-2 mb-2 theme-toggle-btn-footer"
-          onClick={onToggleDarkMode}
-        >
-          <i className={darkMode ? 'bi bi-sun-fill' : 'bi bi-moon-fill'} />
-          <span>{darkMode ? 'Switch to light mode' : 'Switch to dark mode'}</span>
-        </button>
         <div className="copyright">
           &copy; {new Date().getFullYear()} <strong>
             <span>Shivendra Kumar Sonkar</span>
-          </strong>
+          </strong>{' '}
+          &mdash; Built with React
         </div>
       </div>
     </footer>
   );
 };
 
+const sectionIds = navItems.map((item) => item.id);
+
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const saved = window.localStorage.getItem('theme');
@@ -585,13 +622,59 @@ const App = () => {
     window.localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+      setShowBackToTop(window.scrollY > 400);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   const handleToggleDarkMode = () => {
     setDarkMode((prev) => !prev);
   };
 
+  const handleToggleMobileMenu = () => {
+    setMobileMenuOpen((prev) => !prev);
+  };
+
+  const handleNavLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <>
-      <Header />
+      <Header
+        darkMode={darkMode}
+        onToggleDarkMode={handleToggleDarkMode}
+        activeSection={activeSection}
+        scrolled={scrolled}
+        mobileMenuOpen={mobileMenuOpen}
+        onToggleMobileMenu={handleToggleMobileMenu}
+        onNavLinkClick={handleNavLinkClick}
+      />
       <Hero />
       <main id="main">
         <About />
@@ -602,8 +685,12 @@ const App = () => {
         <AchievementsSection />
         <ContactSection />
       </main>
-      <Footer darkMode={darkMode} onToggleDarkMode={handleToggleDarkMode} />
-      <a href="#hero" className="back-to-top d-flex align-items-center justify-content-center">
+      <Footer />
+      <a
+        href="#hero"
+        className={`back-to-top d-flex align-items-center justify-content-center ${showBackToTop ? 'active' : ''}`}
+        aria-label="Back to top"
+      >
         <i className="bi bi-arrow-up-short" />
       </a>
     </>
