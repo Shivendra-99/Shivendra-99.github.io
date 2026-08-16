@@ -605,7 +605,7 @@ const Footer = () => {
 const sectionIds = navItems.map((item) => item.id);
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -613,7 +613,9 @@ const App = () => {
 
   useEffect(() => {
     const saved = window.localStorage.getItem('theme');
-    if (saved === 'dark') {
+    if (saved === 'light') {
+      setDarkMode(false);
+    } else if (saved === 'dark') {
       setDarkMode(true);
     }
   }, []);
